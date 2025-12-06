@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Little Garden Play School</title>
+  <link rel="icon" type="image/x-icon" href="/logo 1.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loginScreen" class="container">
+    <div class="login-title-group">
+        <img src="logo 1.png" alt="Little Garden Play School Logo" class="school-logo">
+        <div class="title-text-stack">
+            <h1 class="hed1">Little Garden</h1>
+            <h1 style="font-weight: 800;">Play School</h1>
+        </div>
+    </div>
+    <p id="loginMessage" style="text-align: center; color: #555;"></p>
+    
+    <div class="login-form-fields">
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="handleLogin()">Login</button>
+    </div>
+    </div>
+  
+  <div id="appScreen" class="container hidden">
+    <div class="header-content">
+      <div class="title-group">
+            <span class="main-school-title">Little Garden Play School</span>
+            <span class="system-title" onclick="showAttendanceView()" style="cursor: pointer;">📘 Class Attendance System</span>
+        </div> 
+        <button onclick="handleLogout()" id="logoutBtn">Logout</button>
+    </div>
+    <div id="attendanceTakingView">
+      <div class="input-section">
+        <select id="classSelect" aria-label="Select Class"></select>
+        <button onclick="loadClassStudents()">Load Students</button>
+        <button onclick="showStudentHistoryPrompt()">Student History</button>
+        <button onclick="showReportView()">Monthly Report</button>
+      </div>
+
+      <div id="studentTableContainer">
+        <table id="studentTable" class="hidden">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Attendance</th>
+              <th scope="col">Comment</th>
+            </tr>
+          </thead>
+          <tbody id="studentBody"></tbody>
+        </table>
+      </div>
+
+      <button id="saveBtn" class="hidden" onclick="saveAttendance()">💾 Save Attendance</button>
+    </div>
+    
+    <div id="reportView" class="hidden">
+        <h2 id="reportHeader">📊 Monthly Attendance Report</h2>
+        <div class="input-section">
+            <select id="reportMonthSelect" aria-label="Select Month"></select>
+            <select id="reportYearSelect" aria-label="Select Year"></select>
+            <button onclick="generateMonthlyReport()">Generate Report</button>
+            <button onclick="exportMonthlyReportToCSV()">Export to CSV</button>
+        </div>
+        <div id="reportOutput" class="hidden">
+            <div id="monthlyReportTableContainer"></div>
+        </div>
+    </div>
+    
+    <div id="studentHistoryView" class="hidden">
+        </div>
+    
+  </div>
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

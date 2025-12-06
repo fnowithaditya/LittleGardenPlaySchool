@@ -1,0 +1,425 @@
+/* style.css - Updated for Responsive Login Form, Logo Alignment, and Background */
+
+/* Global Reset/Base */
+body {
+  /* Modern font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+  color: #333;
+  
+  /* --- BACKGROUND IMAGE STYLES (PRESERVED) --- */
+  background-image: url('/bgimg.jpg'); /* Path to your background image */
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  background-attachment: fixed;  
+  background-color: #1a4a75;     
+  position: relative;
+}
+
+/* Optional: Add a subtle dark overlay over the background image for better contrast */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); 
+    z-index: -1; 
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px 50px 50px 50px; 
+  border-radius: 20px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- Login Screen Container (Translucent) --- */
+#loginScreen.container {
+  padding: 40px 30px 60px 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.603); /* Translucent white */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* --- Application Screen Container (Translucent) --- */
+#appScreen.container {
+    background: rgba(255, 255, 255, 0.603); /* Translucent white */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+}
+
+/* ========================================================= */
+/* --- LOGIN SCREEN LOGO & TITLE STYLES --- */
+/* ========================================================= */
+
+/* Container for Logo and Text Stack */
+.login-title-group {
+    display: flex; 
+    align-items: center; 
+    justify-content: left; 
+    margin-bottom: 25px; 
+    /* MANUAL SHIFT LEFT: Adjust this negative margin to move the group left */
+    margin-left: 4px; 
+}
+
+.school-logo {
+    width: 83px; 
+    height: 80px;
+    margin-right: 15px; 
+}
+
+.title-text-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-title-group h1 {
+    text-align: left; 
+    margin: 0; 
+    line-height: 1.1; 
+}
+
+.hed1 {
+    font-size: 35px;
+    font-weight: 800; 
+}
+
+/* ========================================================= */
+/* --- RESPONSIVE LOGIN FORM LAYOUT --- */
+/* ========================================================= */
+
+/* Desktop Default Layout (Horizontal) */
+.login-form-fields {
+    display: flex;
+    gap: 15px; /* Spacing between inputs and button */
+    align-items: center;
+    margin-top: 25px; /* Space below the login message */
+}
+
+/* Inputs on desktop take up space and align horizontally */
+.login-form-fields input {
+    flex-grow: 1;
+    margin-bottom: 0 !important; /* Overrides any previous margin-bottom */
+}
+
+/* Button on desktop keeps its content size */
+.login-form-fields button {
+    flex-shrink: 0;
+    width: auto !important; /* Overrides 100% width rule */
+    min-width: 100px;
+}
+
+/* ========================================================= */
+/* --- APP SCREEN HEADER & GENERAL STYLES --- */
+/* ========================================================= */
+
+.header-content {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 25px; 
+}
+
+.title-group {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: baseline;
+    gap: 10px; 
+    max-width: 80%; 
+}
+
+.main-school-title {
+    color: #1a4a75; 
+    font-size: 30px; 
+    font-weight: 800;
+}
+
+.system-title {
+    color: #2d89ff; 
+    font-size: 18px; 
+    font-weight: 500;
+    cursor: pointer;
+}
+
+h1 {
+  /* General H1 for app screen */
+  margin: 0; 
+  color: #1a4a75; 
+  font-size: 30px;
+  font-weight: 700;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  cursor: pointer; 
+}
+
+h2 {
+    color: #1a4a75;
+    margin-top: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Input & Controls (App Screen) */
+.input-section {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="email"], 
+input[type="password"], 
+input[type="text"], 
+select {
+  flex-grow: 1; 
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6; 
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fcfcfc;
+  box-sizing: border-box; 
+}
+
+input:focus, select:focus {
+    border-color: #2d89ff;
+    box-shadow: 0 0 0 3px rgba(45, 137, 255, 0.2);
+    outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2d89ff; /* Primary Blue */
+  color: white;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.1s;
+  white-space: nowrap; 
+}
+
+button:hover {
+  background: #1a4a75; 
+  transform: translateY(-1px);
+}
+
+#logoutBtn {
+  background: #e74c3c; 
+}
+
+#logoutBtn:hover {
+  background: #c0392b;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Table Styling (Attendance & Report) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%; 
+}
+
+th, td {
+  padding: 15px 12px; 
+  text-align: left;
+}
+
+th {
+  background: #eff2ff; 
+  color: #1a4a75;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#studentTable tbody tr:nth-child(even),
+#monthlyReportTable tbody tr:nth-child(even) {
+    background-color: #f7f9fc; 
+}
+
+#studentTable tbody tr:hover,
+#monthlyReportTable tbody tr:hover {
+    background-color: #eef2f7; 
+}
+
+td {
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+/* Attendance Status Radio Buttons */
+td input[type="radio"] {
+    opacity: 0; 
+    position: absolute;
+}
+td label {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 16px; 
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: 1px solid #ddd;
+    color: #555;
+    margin-right: 5px; 
+    margin-bottom: 5px;
+}
+
+td input[type="radio"]:checked + label {
+    color: white;
+    border: none;
+}
+
+input[id^="present-"]:checked + label {
+    background: #2ecc71; 
+}
+input[id^="absent-"]:checked + label {
+    background: #e74c3c; 
+}
+
+/* Report Table Specifics */
+#monthlyReportTableContainer,
+#studentTableContainer { 
+    overflow-x: auto; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#monthlyReportTable {
+    min-width: 600px; 
+}
+
+#monthlyReportTable th, 
+#monthlyReportTable td {
+    padding: 10px 6px;
+    text-align: center;
+    min-width: 40px;
+    font-size: 13px; 
+}
+
+.comment-box {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; 
+}
+
+/* ========================================================= */
+/* MOBILE RESPONSIVENESS (Max-width 768px for phones/tablets) */
+/* ========================================================= */
+@media (max-width: 768px) {
+    
+    body {
+        background-position: left top; 
+    }
+    
+    .container {
+        margin: 15px;
+        padding: 20px;
+        box-shadow: none; 
+    }
+    .school-logo {
+    width: 83px; 
+    height: 80px;
+    margin-right: 8px; 
+}
+    .login-title-group {
+    display: flex; 
+    align-items: center; 
+    justify-content: left; 
+    margin-bottom: 25px; 
+    /* MANUAL SHIFT LEFT: Adjust this negative margin to move the group left */
+    margin-left: -18px; 
+}
+    
+    /* --- MOBILE LOGIN FORM STACK (PRESERVES MOBILE UI) --- */
+    /* Forces the inputs and button to stack vertically on mobile */
+    .login-form-fields {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Forces all children (inputs/button) to take up full width on mobile */
+    .login-form-fields input,
+    .login-form-fields button {
+        width: 100%;
+        margin-bottom: 0; /* Clean up margins */
+        margin-left: -20px;
+    }
+    /* ---------------------------------------------------- */
+
+    /* --- LOGOUT BUTTON AND TITLE FIX --- */
+    .header-content h1 {
+        font-size: 20px; 
+        flex-shrink: 1; 
+    }
+    
+    #logoutBtn {
+        width: auto; 
+        padding: 8px 12px; 
+        font-size: 10px;
+        flex-shrink: 0; 
+        background-color: #ff5757a4;
+    }
+    /* ----------------------------------- */
+
+
+    /* Stack input section items on mobile */
+    .input-section {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    
+    /* General button rule for mobile (Overridden by .login-form-fields button above) */
+    button {
+        width: 100%;
+    }
+    
+    /* Override the 100% width for the corner Logout button */
+    #logoutBtn {
+        width: auto;
+    }
+
+    /* Reduce table padding for better fit */
+    th, td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    /* Wrap attendance status options to prevent overflow */
+    #studentTable td:nth-child(3) {
+        white-space: normal;
+    }
+
+    /* Reduce font size for labels to save space */
+    td label {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    /* Ensure attendance table is scrollable horizontally */
+    #studentTable {
+        min-width: 500px; 
+    }
+}
