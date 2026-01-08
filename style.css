@@ -422,4 +422,11 @@ input[id^="absent-"]:checked + label {
     #studentTable {
         min-width: 500px; 
     }
+
+}
+/* Specifically target iOS devices */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll !important;
+  }
 }
