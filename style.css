@@ -425,10 +425,11 @@ input[id^="absent-"]:checked + label {
 
 }
 /* Specifically target iOS devices */
-@supports (-webkit-touch-callout: none) {
+/* @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
   }
-}
+} */
+
 
 
